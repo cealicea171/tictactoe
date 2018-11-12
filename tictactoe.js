@@ -17,11 +17,15 @@ const circleSymbol = "⭕️";
 //FUCK
 const crossSymbol = "❌";
 const winCombinations = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [6, 4, 2]];
+//different winning combinations
 const gameBoard = document.getElementById('board');
 //Grabs the cells by looking at everything with the class "pos"
-//
+// whats document.getElementById?
+//Document. getElementbyID is saying go to the html file and get the element that has the ID in the parantheses.
+//board is saying whenever you use that varaible your cover the entire thing
 const cells = document.querySelectorAll('.pos');
 //Grabs what the player's symbol is through the symbol button!
+//querySelectorAll TELLS WHAT CELL
 const playerSymbol = document.querySelectorAll('.symbol');
 
 //Board array
@@ -35,14 +39,13 @@ let pOneScore = 0;
 let pTwoScore = 0;
 
 startGame();
-
+//making a function , defining two varaibles saying each array/cell making it 0 at first.
 function startGame(){
   pOneScore = 0;
   pTwoScore = 0;
   //clearBoard();
-  for (let j = 0; j < gameBoard.length; j++){
-      gameType[j].addEventListener('click', chooseSymbol, false);
-    };
+  //creating a for loop
+
 }
 
 //Fuckin hell
