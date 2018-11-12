@@ -19,6 +19,7 @@ const crossSymbol = "❌";
 const winCombinations = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [6, 4, 2]];
 //different winning combinations
 const gameBoard = document.getElementById('board');
+gameBoard.addEventListener('click', testAdd);
 //Grabs the cells by looking at everything with the class "pos"
 // whats document.getElementById?
 //Document. getElementbyID is saying go to the html file and get the element that has the ID in the parantheses.
@@ -45,8 +46,7 @@ function startGame(){
   pTwoScore = 0;
   //clearBoard();
   //creating a for loop
-
 }
-
-//Fuckin hell
-//gameBoard.addEventListener('click', result);
+function testAdd(){
+  gameBoard.innerHTML += "x";
+}
