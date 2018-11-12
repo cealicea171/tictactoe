@@ -4,6 +4,12 @@ body {
   color: white;
   min-width: 300px;
 }
+.container{
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 3em;
+}
 table{
   border: 5px white solid;
 }
