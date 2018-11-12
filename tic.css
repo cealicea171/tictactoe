@@ -21,6 +21,8 @@ td {
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
+  border-style: dotted;
+  
 }
 td:hover{
   background-color: #06c6ed;
