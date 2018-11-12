@@ -1,6 +1,6 @@
 body {
-  font-family: monospace;
-  background: teal;
+  font-family: fantasy;
+  background: #6e0400;
   color: white;
   min-width: 300px;
 }
@@ -11,17 +11,17 @@ body {
   top: 3em;
 }
 table{
-  border: 5px white solid;
+  border: 5px black solid;
 }
 td {
-  border: 2px white solid;
+  border: 2px black solid;
   width: 10em;
   height: 10em;
-  background-color: purple;
+  background-color: #f0c2a2;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
 }
 td:hover{
-  background-color: yellow;
+  background-color: #06c6ed;
 }
