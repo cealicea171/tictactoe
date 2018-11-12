@@ -36,13 +36,11 @@ startGame();
 function startGame(){
   pOneScore = 0;
   pTwoScore = 0;
-  clearBoard();
-  document.querySelector(".buttons").style.display = "none";
-  document.querySelector(".chooseSymbol").style.display = "none";
+  //clearBoard();
   for (let j = 0; j < gameBoard.length; j++){
       gameType[j].addEventListener('click', chooseSymbol, false);
     };
 }
 
 //Fuckin hell
-gameBoard.addEventListener('click', result);
+//gameBoard.addEventListener('click', result);

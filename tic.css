@@ -6,7 +6,7 @@ body {
 }
 .container{
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   position: relative;
   top: 3em;
 }
@@ -29,4 +29,14 @@ h1 {
   text-align: center;
   text-decoration: underline;
   text-decoration-style: wavy;
+}
+.symbol{
+  border-radius: 10px;
+  background-color: #f0c2a2;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+.symbol:hover{
+  background-color: #06c6ed;
 }
