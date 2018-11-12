@@ -25,3 +25,8 @@ td {
 td:hover{
   background-color: #06c6ed;
 }
+h1 {
+  text-align: center;
+  text-decoration: underline;
+  text-decoration-style: wavy;
+}
