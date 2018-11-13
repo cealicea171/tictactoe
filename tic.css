@@ -24,7 +24,8 @@ td {
   border: 1px black solid;
   width: 10em;
   height: 10em;
-  background-color: #f0c2a2;
+  /* background-color: #f0c2a2; */
+  background-color: darkslategrey;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
@@ -33,12 +34,13 @@ td {
   vertical-align: middle;
 }
 td:hover{
-  background-color: #06c6ed;
+  /* background-color: #06c6ed; */
+  background-color: gold;
 }
 h1 {
   text-align: center;
   text-decoration: underline;
-  font-family: 'Righteous';
+  font-family: 'Righteous',cursive;
 }
 .symbol{
   border-radius: 10px;
