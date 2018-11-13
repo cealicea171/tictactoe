@@ -1,11 +1,15 @@
+/* IMPORTS */
+@import url('https://fonts.googleapis.com/css?family=Righteous|Source+Sans+Pro');
+/* END IMPORTS */
 body {
-  font-family: fantasy;
+  font-family: 'Source Sans Pro', sans-serif;
   background: #6e0400;
   color: white;
   min-width: 300px;
 }
 .board{
   border: 5px black solid;
+  margin: 0;
 }
 .container{
   display: flex;
@@ -13,26 +17,26 @@ body {
   position: relative;
   top: 3em;
 }
-span {
-  border: 2px black solid;
+table{
+  border-collapse: collapse;
+}
+td {
+  border: 1px black solid;
   width: 10em;
   height: 10em;
   background-color: #f0c2a2;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
-  border-style: dotted;
-  display: inline-block;
-  margin: auto;
-
+  margin: 0;
 }
-span:hover{
+td:hover{
   background-color: #06c6ed;
 }
 h1 {
   text-align: center;
   text-decoration: underline;
-  text-decoration-style: wavy;
+  font-family: 'Righteous';
 }
 .symbol{
   border-radius: 10px;

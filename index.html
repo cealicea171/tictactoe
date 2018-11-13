@@ -8,19 +8,20 @@
   <body>
     <h1>GAMEMESSAGEHERE</h1>
     <!-- Game Board-->
-    <div class="board">
-
-  </div>
-  <!-- <div class="container">
+    <div class="container">
+      <table class= "board">
+      </table>
+      </div>
+  <div class="container">
     <p>What symbol?</p>
     <p><button class="symbol crossSelection" value="X" onclick="setPlayerX()">❌</button>
       <button class="symbol naughtSelection" value="O" onclick="setPlayerO()">⭕️</button></p>
-  </div> -->
-    <!--<script type="text/javascript" src="tictactoe.js"></script>-->
+  </div>
+    <script type="text/javascript" src="tictactoe.js"></script>
     <script>
     let grid = [[null, null, null],
-            [null, null, null],
-            [null, null, null]];
+                [null, null, null],
+                [null, null, null]];
 const insertSymbol = (symbol, x, y) =>{
   grid[y][x] = symbol;
   return grid;
@@ -34,18 +35,18 @@ const resetGrid = () =>{
 
   const drawGrid =()=>{
     var board = document.querySelector('.board');
-    // for (let i = 0; i < grid.length; i++){
-    //   console.log(grid[i]);
-    // }
-    // let el = document.createElement('div');
     for (let row of grid) {
       //3 times
-      let rowEl = document.createElement('div');
+      let rowEl = document.createElement('tr');
       //9 times
       for (column of row){
         console.log(column);
-        let cellEl = document.createElement('span');
-        let cellTxt = document.createTextNode(column);
+        let cellEl = document.createElement('td');
+        let symbol = column;
+        if (column == null){
+          symbol = "-";
+        }
+        let cellTxt = document.createTextNode(symbol);
         cellEl.appendChild(cellTxt);
         rowEl.appendChild(cellEl);
       }
@@ -55,8 +56,8 @@ const resetGrid = () =>{
 
 
   resetGrid();
-  insertSymbol('x', 0, 1);
-  insertSymbol('o', 1, 2);
+  // insertSymbol('x', 0, 1);
+  // insertSymbol('o', 1, 2);
   drawGrid();
     </script>
   </body>
