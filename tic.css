@@ -4,16 +4,16 @@ body {
   color: white;
   min-width: 300px;
 }
+.board{
+  border: 5px black solid;
+}
 .container{
   display: flex;
   justify-content: space-around;
   position: relative;
   top: 3em;
 }
-table{
-  border: 5px black solid;
-}
-td {
+span {
   border: 2px black solid;
   width: 10em;
   height: 10em;
@@ -22,9 +22,11 @@ td {
   -o-transition: 0.5s;
   transition: 0.5s;
   border-style: dotted;
+  display: inline-block;
+  margin: auto;
 
 }
-td:hover{
+span:hover{
   background-color: #06c6ed;
 }
 h1 {

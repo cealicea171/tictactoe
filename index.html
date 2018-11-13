@@ -6,32 +6,58 @@
     <link href="tic.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <h1> Who wants to go first?</h1>
+    <h1>GAMEMESSAGEHERE</h1>
     <!-- Game Board-->
-    <div class="container">
-    <table id="board">
-      <tr>
-        <td class="pos pos1" id="0"></td>
-        <td class="pos pos2" id="1"></td>
-        <td class="pos pos3" id="2"></td>
-      </tr>
-      <tr>
-        <td class="pos pos4" id="3"></td>
-        <td class="pos pos5" id="4"></td>
-        <td class="pos pos6" id="5"></td>
-      </tr>
-      <tr>
-        <td class="pos pos7" id="6"></td>
-        <td class="pos pos8" id="7"></td>
-        <td class="pos pos9" id="8"></td>
-      </tr>
-    </table>
+    <div class="board">
+
   </div>
-  <div class="container">
+  <!-- <div class="container">
     <p>What symbol?</p>
-    <p><button class="symbol crossSelection" value="X">❌</button>
-      <button class="symbol naughtSelection" value="O">⭕️</button></p>
-  </div>
-    <script type="text/javascript" src="tictactoe.js"></script>
+    <p><button class="symbol crossSelection" value="X" onclick="setPlayerX()">❌</button>
+      <button class="symbol naughtSelection" value="O" onclick="setPlayerO()">⭕️</button></p>
+  </div> -->
+    <!--<script type="text/javascript" src="tictactoe.js"></script>-->
+    <script>
+    let grid = [[null, null, null],
+            [null, null, null],
+            [null, null, null]];
+const insertSymbol = (symbol, x, y) =>{
+  grid[y][x] = symbol;
+  return grid;
+}
+const resetGrid = () =>{
+ let grid = [[null, null, null],
+            [null, null, null],
+            [null, null, null]];
+  return grid;
+}
+
+  const drawGrid =()=>{
+    var board = document.querySelector('.board');
+    // for (let i = 0; i < grid.length; i++){
+    //   console.log(grid[i]);
+    // }
+    // let el = document.createElement('div');
+    for (let row of grid) {
+      //3 times
+      let rowEl = document.createElement('div');
+      //9 times
+      for (column of row){
+        console.log(column);
+        let cellEl = document.createElement('span');
+        let cellTxt = document.createTextNode(column);
+        cellEl.appendChild(cellTxt);
+        rowEl.appendChild(cellEl);
+      }
+      board.appendChild(rowEl);
+    }
+  }
+
+
+  resetGrid();
+  insertSymbol('x', 0, 1);
+  insertSymbol('o', 1, 2);
+  drawGrid();
+    </script>
   </body>
 </html>
