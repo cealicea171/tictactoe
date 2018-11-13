@@ -28,7 +28,9 @@ td {
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
-  margin: 0;
+  margin: auto;
+  text-align: center;
+  vertical-align: middle;
 }
 td:hover{
   background-color: #06c6ed;
@@ -44,6 +46,9 @@ h1 {
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
+  width: 5em;
+  height: 5em;
+  text-align: center;
 }
 .symbol:hover{
   background-color: #06c6ed;

@@ -14,8 +14,8 @@
       </div>
   <div class="container">
     <p>What symbol?</p>
-    <p><button class="symbol crossSelection" value="X" onclick="setPlayerX()">❌</button>
-      <button class="symbol naughtSelection" value="O" onclick="setPlayerO()">⭕️</button></p>
+    <p><button class="board symbol crossSelection" value="X" onclick="setPlayerX()">❌</button>
+      <button class="board symbol naughtSelection" value="O" onclick="setPlayerO()">⭕️</button></p>
   </div>
     <script type="text/javascript" src="tictactoe.js"></script>
     <script>
@@ -40,7 +40,7 @@ const resetGrid = () =>{
       let rowEl = document.createElement('tr');
       //9 times
       for (column of row){
-        console.log(column);
+        //console.log(column);
         let cellEl = document.createElement('td');
         let symbol = column;
         if (column == null){
