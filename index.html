@@ -37,6 +37,7 @@ const clearChildren = (element) =>{
     //why do we use element.firstChild
     element.removeChild(element.firstChild);
     // what is this saying?
+    //
   }
 }
 const insertSymbol = (symbol, x, y) =>{
@@ -87,6 +88,7 @@ const resetGrid = () =>{
     ////board is saying whenever you use that varaible your cover the entire thing
     clearChildren(board);
     //clear all the shit out from the board
+    // clear children so that it doesn't add a new board everytime
     for (let row of grid) {
       //create  a for of loop saying let the row of grid 3 times
       let rowEl = document.createElement('tr');
