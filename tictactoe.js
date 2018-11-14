@@ -29,7 +29,6 @@ const cells = document.querySelectorAll('.pos');
 const playerSymbol = document.querySelectorAll('.symbol');
 
 //Board array
-var tttBoard;
 
 //Gonna set the symbol to player one and the "AI" based on what they pick later on.
 var playerOne;

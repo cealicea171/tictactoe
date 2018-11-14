@@ -16,7 +16,8 @@
     <p>What symbol?</p>
     <p><button class="board symbol crossSelection" value="X" onclick="setPlayerX()">❌</button>
       <button class="board symbol naughtSelection" value="O" onclick="setPlayerO()">⭕️</button></p>
-      <!--The onClick attribute is an event handler that instructs the browser to run a script when the visitor clicks a button.-->
+      <!--what is onclick?->
+      <!-The onClick attribute is an event handler that instructs the browser to run a script when the visitor clicks a button.-->
   </div>
   <div class="container">
     <p><button class="board symbol" onclick="resetGrid();">Clear Board</button></p>
@@ -36,9 +37,9 @@ const clearChildren = (element) =>{
   //How many elements?
   //  creating a while loop because we know we want to play the game forever
   while (element.firstChild){
-    //why do we use element.firstChild
+    //why do we use element.firstChild?
     element.removeChild(element.firstChild);
-    // what is this saying?
+    // what is this saying??????????????
 
   }
 }
