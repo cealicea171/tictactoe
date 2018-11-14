@@ -19,8 +19,6 @@ const crossSymbol = "❌";
 const winCombinations = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [6, 4, 2]];
 //different winning combinations
 const gameBoard = document.getElementById('board');
-const playerBoard = document.getElementById('playerselect');
-const gameMsg = document.querySelectorAll('gamemsg');
 //Grabs the cells by looking at everything with the class "pos"
 // whats document.getElementById?
 //Document. getElementbyID is saying go to the html file and get the element that has the ID in the parantheses.
@@ -42,28 +40,18 @@ let pTwoScore = 0;
 
 startGame();
 //making a function , defining two varaibles saying each array/cell making it 0 at first.
-
-function removeElement(elementId) {
-    // Removes an element from the document
-    var element = document.getElementById(elementId);
-    element.parentNode.removeChild(element);
-}
-
 function startGame(){
   pOneScore = 0;
   pTwoScore = 0;
   //clearBoard();
   //creating a for loop
-  gameMsg.innerHTML = 'Select a Symbol!';
 }
 
 function setPlayerX(){
   playerOne = crossSymbol;
-  removeElement('playerselect');
   console.log(`Player is now ${crossSymbol}`);
 }
 function setPlayerO(){
   playerOne = circleSymbol;
-  removeElement('playerselect');
   console.log(`Player is now ${circleSymbol}`);
 }

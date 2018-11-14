@@ -32,15 +32,21 @@ const clearChildren = (element) =>{
   //Assume we got an element.
   //Assuming we got children.
   //How many elements?
+  //  creating a while loop because we know we want to play the game forever
   while (element.firstChild){
+    //why do we use element.firstChild
     element.removeChild(element.firstChild);
+    // what is this saying?
   }
 }
 const insertSymbol = (symbol, x, y) =>{
+  //creating a insertSymbol arrow function
   grid[y][x] = symbol;
+  //letting the grid equal symbol
   drawGrid();
   //return grid;
 }
+//create a reset grid function so that when the play is done or if u mess up u can reset it.
 const resetGrid = () =>{
   //Makes the grid empty
  let grid = [[null, null, null],
@@ -77,25 +83,45 @@ const resetGrid = () =>{
               this.shaded = true;
             }
     var board = document.querySelector('.board');
+    //The querySelector() method returns the first element that matches a specified CSS selector(s) in the document
+    ////board is saying whenever you use that varaible your cover the entire thing
     clearChildren(board);
-    //clear all the shit out
+    //clear all the shit out from the board
     for (let row of grid) {
-      //3 times
+      //create  a for of loop saying let the row of grid 3 times
       let rowEl = document.createElement('tr');
+      //document.createElement is saying create a table row
       //9 times
       for (column of row){
+        // create  a for of loop saying let the column of row
         //console.log(column);
         let cellEl = document.createElement('td');
+        // document.createElement is saying create a table column
         let symbol = column;
+        // symbol is now column
         if (column == null){
+          //if nothing is in square dont draw anything
           symbol = "";
+          //nothing drawing = empty string
         }
         let cellTxt = document.createTextNode(symbol);
+        // creating a text node.
+        //'cellTxt is the TextNode
+        //symbol is the string containing the data to be put in the text node.
+        //symbol is the emoji
         cellEl.appendChild(cellTxt);
+        //appendChild() method appends a node as the last child of a node.
+        //its basically saying add on from the last click so u can make 3 in a row
         cellEl.addEventListener('click', shade);
+        //The addEventListener() method attaches an event handler to the specified element.
+        //saying once u click add shade
         rowEl.appendChild(cellEl);
+        //appendChild() method appends a node as the last child of a node.
+        //saying keep adding on
       }
       board.appendChild(rowEl);
+      ////appendChild() method appends a node as the last child of a node.
+      //saying keep adding on
     }
     //END LOOPS
     //elt.style = "color: blue;"
