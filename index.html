@@ -42,17 +42,39 @@ const insertSymbol = (symbol, x, y) =>{
   //return grid;
 }
 const resetGrid = () =>{
+  //Makes the grid empty
  let grid = [[null, null, null],
             [null, null, null],
             [null, null, null]];
-  grid.style = "";
+  //Redraws the empty grid
+  drawGrid();
   return grid;
 }
 
   const drawGrid =()=>{
+            //This is when they click a square!
             function shade(){
-              this.style = "background-color: powderblue;"
-              column="x";
+              //Let's create a boolean value
+              var shaded;
+              //this.variable works apparently. That was a surprise.
+              if (this.shaded == true){
+                //If it's picked, don't let them pick this square.
+                return console.log("can't pick. Already chosen.");
+              }
+
+              if (playerOne == crossSymbol){
+                //If the player is X put an X.
+                this.innerHTML = 'x';
+              } else if (playerOne == circleSymbol){
+                //If they're O put an O
+                this.innerHTML = 'o';
+              } else {
+                //They didn't pick a symbol.
+                return console.log("Pick a symbol.");
+              }
+              //After all that, shade the suare and switch the shaded boolean to true.
+              this.style = "background-color: deepskyblue;"
+              this.shaded = true;
             }
     var board = document.querySelector('.board');
     clearChildren(board);

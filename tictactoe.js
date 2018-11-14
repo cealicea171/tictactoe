@@ -48,10 +48,10 @@ function startGame(){
 }
 
 function setPlayerX(){
-  let playerOne = crossSymbol;
+  playerOne = crossSymbol;
   console.log(`Player is now ${crossSymbol}`);
 }
 function setPlayerO(){
-  let playerOne = circleSymbol;
+  playerOne = circleSymbol;
   console.log(`Player is now ${circleSymbol}`);
 }
