@@ -42,6 +42,13 @@ let pTwoScore = 0;
 
 startGame();
 //making a function , defining two varaibles saying each array/cell making it 0 at first.
+
+function removeElement(elementId) {
+    // Removes an element from the document
+    var element = document.getElementById(elementId);
+    element.parentNode.removeChild(element);
+}
+
 function startGame(){
   pOneScore = 0;
   pTwoScore = 0;
@@ -52,11 +59,11 @@ function startGame(){
 
 function setPlayerX(){
   playerOne = crossSymbol;
-  clearChildren(playerBoard);
+  removeElement('playerselect');
   console.log(`Player is now ${crossSymbol}`);
 }
 function setPlayerO(){
   playerOne = circleSymbol;
-  clearChildren(playerBoard);
+  removeElement('playerselect');
   console.log(`Player is now ${circleSymbol}`);
 }
