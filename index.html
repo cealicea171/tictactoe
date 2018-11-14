@@ -7,7 +7,7 @@
   </head>
   <body>
     <h1 class="gamemsg">GAMEMESSAGEHERE</h1>
-    <!-- Game Board-->
+    <!-- danny is creating a cool thing that when once u click a symbol it will say something-->
     <div class="container">
       <table class= "board">
       </table>
@@ -16,6 +16,7 @@
     <p>What symbol?</p>
     <p><button class="board symbol crossSelection" value="X" onclick="setPlayerX()">❌</button>
       <button class="board symbol naughtSelection" value="O" onclick="setPlayerO()">⭕️</button></p>
+      <!--The onClick attribute is an event handler that instructs the browser to run a script when the visitor clicks a button.-->
   </div>
   <div class="container">
     <p><button class="board symbol" onclick="resetGrid();">Clear Board</button></p>
@@ -28,6 +29,7 @@
                 [null, null, null],
                 [null, null, null]];
 const clearChildren = (element) =>{
+  //creating clear children function to call later so that it doesnt add more game boards
   //Destroy the children.
   //Assume we got an element.
   //Assuming we got children.
@@ -37,12 +39,13 @@ const clearChildren = (element) =>{
     //why do we use element.firstChild
     element.removeChild(element.firstChild);
     // what is this saying?
-    //
+
   }
 }
 const insertSymbol = (symbol, x, y) =>{
   //creating a insertSymbol arrow function
   grid[y][x] = symbol;
+  //assigns the x and y axis
   //letting the grid equal symbol
   drawGrid();
   //return grid;
@@ -127,7 +130,8 @@ const resetGrid = () =>{
     }
     //END LOOPS
     //elt.style = "color: blue;"
-
+// what the hell is onclick??
+//The onClick attribute is an event handler that instructs the browser to run a script when the visitor clicks a button.
   }
 
 
