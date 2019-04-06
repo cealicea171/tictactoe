@@ -1,145 +1,154 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Tic Tac Toe</title>
-    <link href="tic.css" rel="stylesheet" type="text/css" />
-  </head>
-  <body>
-    <h1 class="gamemsg">GAMEMESSAGEHERE</h1>
-    <!-- danny is creating a cool thing that when once u click a symbol it will say something-->
-    <div class="container">
-      <table class= "board">
-      </table>
-      </div>
+
+<head>
+  <meta charset="utf-8">
+  <title>Tic Tac Toe</title>
+  <link href="tic.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <h1 class="gamemsg">GAMEMESSAGEHERE</h1>
+  <!-- danny is creating a cool thing that when once u click a symbol it will say something-->
+  <div class="container">
+    <table class="board">
+    </table>
+  </div>
   <div id="playerselect" class="container">
     <p>What symbol?</p>
     <p><button class="board symbol crossSelection" value="X" onclick="setPlayerX()">❌</button>
       <button class="board symbol naughtSelection" value="O" onclick="setPlayerO()">⭕️</button></p>
-      <!--what is onclick?->
+    <!--what is onclick?->
       <!-The onClick attribute is an event handler that instructs the browser to run a script when the visitor clicks a button.-->
   </div>
   <div class="container">
     <p><button class="board symbol" onclick="resetGrid();">Clear Board</button></p>
+
   </div>
 
 
-    <script type="text/javascript" src="tictactoe.js"></script>
-    <script>
-    let grid = [[null, null, null],
-                [null, null, null],
-                [null, null, null]];
-const clearChildren = (element) =>{
-  //creating clear children function to call later so that it doesnt add more game boards
-  //Destroy the children.
-  //Assume we got an element.
-  //Assuming we got children.
-  //How many elements?
-  //  creating a while loop because we know we want to play the game forever
-  while (element.firstChild){
-    //why do we use element.firstChild?
-    element.removeChild(element.firstChild);
-    // what is this saying??????????????
+  <script type="text/javascript" src="tictactoe.js"></script>
+  <script>
+    let grid = [
+      [null, null, null],
+      [null, null, null],
+      [null, null, null]
+    ];
+    const clearChildren = (element) => {
+      //creating clear children function to call later so that it doesnt add more game boards
+      //Destroy the children.
+      //Assume we got an element.
+      //Assuming we got children.
+      //How many elements?
+      //  creating a while loop because we know we want to play the game forever
+      while (element.firstChild) {
+        //why do we use element.firstChild?
+        element.removeChild(element.firstChild);
+        //
+        // what is this saying??????????????
 
-  }
-}
-const insertSymbol = (symbol, x, y) =>{
-  //creating a insertSymbol arrow function
-  grid[y][x] = symbol;
-  //assigns the x and y axis
-  //letting the grid equal symbol
-  drawGrid();
-  //return grid;
-}
-//create a reset grid function so that when the play is done or if u mess up u can reset it.
-const resetGrid = () =>{
-  //Makes the grid empty
- let grid = [[null, null, null],
-            [null, null, null],
-            [null, null, null]];
-  //Redraws the empty grid
-  drawGrid();
-  return grid;
-}
+      }
+    }
+    const insertSymbol = (symbol, x, y) => {
+      //creating a insertSymbol arrow function
+      grid[y][x] = symbol;
+      //assigns the x and y axis
+      //letting the grid equal symbol
+      drawGrid();
+      //return grid;
+    }
+    //create a reset grid function so that when the play is done or if u mess up u can reset it.
+    const resetGrid = () => {
+      //Makes the grid empty
+      let grid = [
+        [null, null, null],
+        [null, null, null],
+        [null, null, null]
+      ];
+      //Redraws the empty grid
+      drawGrid();
+      return grid;
+    }
 
-  const drawGrid =()=>{
-            //This is when they click a square!
-            function shade(){
-              //Let's create a boolean value
-              var shaded;
-              //this.variable works apparently. That was a surprise.
-              if (this.shaded == true){
-                //If it's picked, don't let them pick this square.
-                return console.log("can't pick. Already chosen.");
-              }
-
-              if (playerOne == crossSymbol){
-                //If the player is X put an X.
-                this.innerHTML = 'x';
-              } else if (playerOne == circleSymbol){
-                //If they're O put an O
-                this.innerHTML = 'o';
-              } else {
-                //They didn't pick a symbol.
-                return console.log("Pick a symbol.");
-              }
-              //After all that, shade the suare and switch the shaded boolean to true.
-              this.style = "background-color: deepskyblue;"
-              this.shaded = true;
-            }
-    var board = document.querySelector('.board');
-    //The querySelector() method returns the first element that matches a specified CSS selector(s) in the document
-    ////board is saying whenever you use that varaible your cover the entire thing
-    clearChildren(board);
-    //clear all the shit out from the board
-    // clear children so that it doesn't add a new board everytime
-    for (let row of grid) {
-      //create  a for of loop saying let the row of grid 3 times
-      let rowEl = document.createElement('tr');
-      //document.createElement is saying create a table row
-      //9 times
-      for (column of row){
-        // create  a for of loop saying let the column of row
-        //console.log(column);
-        let cellEl = document.createElement('td');
-        // document.createElement is saying create a table column
-        let symbol = column;
-        // symbol is now column
-        if (column == null){
-          //if nothing is in square dont draw anything
-          symbol = "";
-          //nothing drawing = empty string
+    const drawGrid = () => {
+      //This is when they click a square!
+      function shade() {
+        //Let's create a boolean value
+        var shaded;
+        //this.variable works apparently. That was a surprise.
+        if (this.shaded == true) {
+          //If it's picked, don't let them pick this square.
+          return console.log("can't pick. Already chosen.");
         }
-        let cellTxt = document.createTextNode(symbol);
-        // creating a text node.
-        //'cellTxt is the TextNode
-        //symbol is the string containing the data to be put in the text node.
-        //symbol is the emoji
-        cellEl.appendChild(cellTxt);
-        //appendChild() method appends a node as the last child of a node.
-        //its basically saying add on from the last click so u can make 3 in a row
-        cellEl.addEventListener('click', shade);
-        //The addEventListener() method attaches an event handler to the specified element.
-        //saying once u click add shade
-        rowEl.appendChild(cellEl);
-        //appendChild() method appends a node as the last child of a node.
+
+        if (playerOne == crossSymbol) {
+          //If the player is X put an X.
+          this.innerHTML = 'x';
+        } else if (playerOne == circleSymbol) {
+          //If they're O put an O
+          this.innerHTML = 'o';
+        } else {
+          //They didn't pick a symbol.
+          return console.log("Pick a symbol.");
+        }
+        //After all that, shade the suare and switch the shaded boolean to true.
+        this.style = "background-color: deepskyblue;"
+        this.shaded = true;
+      }
+      var board = document.querySelector('.board');
+      //The querySelector() method returns the first element that matches a specified CSS selector(s) in the document
+      ////board is saying whenever you use that varaible your cover the entire thing
+      clearChildren(board);
+      //clear all the shit out from the board
+      // clear children so that it doesn't add a new board everytime
+      for (let row of grid) {
+        //create  a for of loop saying let the row of grid 3 times
+        let rowEl = document.createElement('tr');
+        //document.createElement is saying create a table row
+        //9 times
+        for (column of row) {
+          // create  a for of loop saying let the column of row
+          //console.log(column);
+          let cellEl = document.createElement('td');
+          // document.createElement is saying create a table column
+          let symbol = column;
+          // symbol is now column
+          if (column == null) {
+            //if nothing is in square dont draw anything
+            symbol = "";
+            //nothing drawing = empty string
+          }
+          let cellTxt = document.createTextNode(symbol);
+          // creating a text node.
+          //'cellTxt is the TextNode
+          //symbol is the string containing the data to be put in the text node.
+          //symbol is the emoji
+          cellEl.appendChild(cellTxt);
+          //appendChild() method appends a node as the last child of a node.
+          //its basically saying add on from the last click so u can make 3 in a row
+          cellEl.addEventListener('click', shade);
+          //The addEventListener() method attaches an event handler to the specified element.
+          //saying once u click add shade
+          rowEl.appendChild(cellEl);
+          //appendChild() method appends a node as the last child of a node.
+          //saying keep adding on
+        }
+        board.appendChild(rowEl);
+        ////appendChild() method appends a node as the last child of a node.
         //saying keep adding on
       }
-      board.appendChild(rowEl);
-      ////appendChild() method appends a node as the last child of a node.
-      //saying keep adding on
+      //END LOOPS
+      //elt.style = "color: blue;"
+      // what the hell is onclick??
+      //The onClick attribute is an event handler that instructs the browser to run a script when the visitor clicks a button.
     }
-    //END LOOPS
-    //elt.style = "color: blue;"
-// what the hell is onclick??
-//The onClick attribute is an event handler that instructs the browser to run a script when the visitor clicks a button.
-  }
 
 
-  resetGrid();
-  // insertSymbol('x', 0, 1);
-  // insertSymbol('o', 1, 2);
-  drawGrid();
-    </script>
-  </body>
+    resetGrid();
+    // insertSymbol('x', 0, 1);
+    // insertSymbol('o', 1, 2);
+    drawGrid();
+  </script>
+</body>
+
 </html>

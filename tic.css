@@ -1,5 +1,6 @@
 /* IMPORTS */
 @import url('https://fonts.googleapis.com/css?family=Righteous|Source+Sans+Pro');
+
 /* END IMPORTS */
 body {
   font-family: 'Source Sans Pro', sans-serif;
@@ -7,19 +8,23 @@ body {
   color: white;
   min-width: 300px;
 }
-.board{
+
+.board {
   border: 5px black solid;
   margin: 0;
 }
-.container{
+
+.container {
   display: flex;
   justify-content: space-around;
   position: relative;
   top: 3em;
 }
-table{
+
+table {
   border-collapse: collapse;
 }
+
 td {
   border: 1px black solid;
   width: 10em;
@@ -33,16 +38,19 @@ td {
   text-align: center;
   vertical-align: middle;
 }
-td:hover{
+
+td:hover {
   /* background-color: #06c6ed; */
   background-color: gold;
 }
+
 h1 {
   text-align: center;
   text-decoration: underline;
-  font-family: 'Righteous',cursive;
+  font-family: 'Righteous', cursive;
 }
-.symbol{
+
+.symbol {
   border-radius: 10px;
   background-color: #f0c2a2;
   -webkit-transition: 0.5s;
@@ -52,6 +60,7 @@ h1 {
   height: 5em;
   text-align: center;
 }
-.symbol:hover{
+
+.symbol:hover {
   background-color: #06c6ed;
 }
